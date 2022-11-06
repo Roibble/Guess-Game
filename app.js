@@ -131,7 +131,9 @@ function aliveCheck() {
 function newGameBtn() {
     stageCount = 0;
     nextNumber.textContent = stageDifficulty[stageCount]
+    
     newGame = document.createElement('button');
+    newGame.style.backgroundColor = stageColour[stageCount]
         newGame.innerHTML = "New Game"
         displayDiv.appendChild(newGame)
         newGame.addEventListener('click', function(){
