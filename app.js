@@ -59,22 +59,7 @@ function endGame() {
         lowHi.textContent = 'Game Over';
         lowHi.style.backgroundColor = 'red';
         newGameBtn()
-        // newGame = document.createElement('button');
-        // newGame.innerHTML = "New Game"
-        // displayDiv.appendChild(newGame)
-        // newGame.addEventListener('click', function(){
-        //     guessBox.value;
-        //     guessBox.disabled = false;
-        //     submit.disabled = false;
-        //     submit.style.display = "block";
-        //     lowHi.textContent = '';
-        //     lowHi.style.backgroundColor = 'transparent';
-        //     displayPrevious.textContent = "Previous attempts:"
-        //     newGame.remove()
-        //     randomNumber = Math.floor((Math.random()*100)+1)
-        //     console.log(randomNumber)
-            
-        // })
+       
     }
 }
 
