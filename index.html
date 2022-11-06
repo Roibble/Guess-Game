@@ -9,11 +9,15 @@
 </head>
 <body>
     <div class="container">
+        
         <h2 class="header">NUMBER GUESSING GAME</h2>
         <P>We have selected a random number between <strong>1</strong> and <strong>100.</strong> <br> See if you can guess it in 10 turns or fewer. We will tell you if you are high or low. </P>
         <input type="number" id="guess-box" placeholder="Guess a number">
         <button id="submit-btn">Submit</button>
         <div id="display-div">
+            <div class="progress-bg">
+                <div id="progress"></div>
+            </div>
             <p id="previous-display"></p>
         <p id="low-hi"></p>
         </div>

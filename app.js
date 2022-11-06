@@ -4,21 +4,29 @@ let displayPrevious = document.getElementById('previous-display');
 const lowHi = document.getElementById('low-hi');
 const submit = document.querySelector('#submit-btn');
 const displayDiv = document.getElementById('display-div')
+let progressBar = document.getElementById('progress')
+
 
 
 let randomNumber = Math.floor((Math.random()*100)+1)
 console.log(randomNumber)
 let guessednumber;
 let newGame;
-let turns = 1;
+let turns = 0;
 let alive = true;
+const progressStage = ['5%', '10%', '20%', '30%', '40%', '50%', '60%', '70%', '80%','90%', '100%']
+guessBox.focus()
+
 displayPrevious.textContent = "Previous attempts: "
+
 submit.addEventListener('click', checkGuess);
 
 
+
 function checkGuess() {
-    guessednumber = guessBox.value;
+    guessednumber = Number(guessBox.value) 
     turns ++;
+    progressBar.style.width = progressStage[turns]
     displayPrevious.textContent += " " + guessednumber + " ";
     
    
@@ -38,7 +46,7 @@ function checkGuess() {
         lowHi.style.backgroundColor = "rgb(200, 0, 20)";
         endGame()
     }
-    console.log(turns)
+    guessBox.focus()
 }
 
 
@@ -90,10 +98,13 @@ function newGameBtn() {
             submit.style.display = "block";
             lowHi.textContent = '';
             lowHi.style.backgroundColor = 'transparent';
+            progressBar.style.width = "0%"
             displayPrevious.textContent = "Previous attempts:"
-            newGame.remove()
+            turns = 0;
             randomNumber = Math.floor((Math.random()*100)+1)
             console.log(randomNumber)
+            newGame.remove()
+            guessBox.focus()
             
         })
 }
