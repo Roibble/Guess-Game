@@ -15,7 +15,9 @@ const carBody = document.getElementById('car-body');
 const sun = document.getElementById('sun');
 const carFull = document.getElementById('car-full');
 
-
+carFull.addEventListener('focus', function(){
+  // alert('Welcome on board')
+})
 
 
 
@@ -134,9 +136,9 @@ function aliveCheck() {
 
     newGameBtn();
   } else if (alive == false && stageCount < 9) {
-    stageCount++;
     
-    // carFull.style.animation = "drive 4s ease-in";
+    stageCount++;
+  
     console.log(stageCount);
     guessBox.disabled = true;
     submit.disabled = true;
@@ -144,10 +146,10 @@ function aliveCheck() {
     lowHi.textContent = "You guessed right !!!";
     lowHi.style.backgroundColor = "green";
     secondStageBtn.innerHTML = "Next Stage";
-    // secondStageBtn.style.backgroundColor = stageColour[stageCount]
+   
     displayDiv.appendChild(secondStageBtn);
     secondStageBtn.addEventListener("click", function () {
-      // carFull.style.animation = "drive 4s ease-in";
+     
      
       randomNumber = Math.floor(
         Math.random()* stageDifficulty[stageCount] + 1
@@ -171,15 +173,16 @@ function newGameBtn() {
   newGame.addEventListener("click", function () {
     stageCount = 0;
     nextNumber.textContent = stageDifficulty[stageCount];
-   
+    stageDisplay.textContent = 0;
     utilityReset();
-    // stageCount = 0;
+    
     randomNumber = Math.floor(Math.random() * stageDifficulty[stageCount] + 1);
     newGame.remove();
   });
 }
 // +++++++++++++++++ RESETTING THE INPUT BOX, ENABLING THE SUBMIT, TURN = 0, DISPLAY GUESS TO EMPTY,  STAGE COLOR RESET ++++++++++++++++
 function utilityReset() {
+ 
   guessBox.value = "";
   guessBox.disabled = false;
   submit.disabled = false;
