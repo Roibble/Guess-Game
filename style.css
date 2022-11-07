@@ -156,17 +156,21 @@
     }
   }
 
-  #mirror {
-    fill:rgb(94, 57, 50)
+  /* #mirror, #mirror_2 {
+    fill:rgb(63, 57, 57);
+    
+    
   }
 
   /* #car-body{
   
   } */
 /* Back car seat */
-  #Vector_136{
-    fill:rgb(94, 57, 50)
-  }
+  /* #back-seat, #back-seat_2{
+    fill:rgb(63, 57, 57);
+    display: none;
+    
+  } */ 
 
   #stage-display {
     /* fill: tomato; */
@@ -229,8 +233,12 @@
   border-bottom: 2px dashed rgb(109, 109, 109);
   border-radius: 3px;
   position: absolute;
-  top:166px;
+  top:163px;
   left:0;
   width: 330px;
 }
 
+#car-full-broken{
+  display: none;
+
+}

@@ -14,6 +14,10 @@ let secondStageBtn = document.createElement("button");
 const carBody = document.getElementById('car-body');
 const sun = document.getElementById('sun');
 const carFull = document.getElementById('car-full');
+const carFullBroken = document.getElementById("car-full-broken");
+const carBody2 = document.getElementById('car-body_2');
+
+
 
 carFull.addEventListener('focus', function(){
   // alert('Welcome on board')
@@ -76,7 +80,7 @@ submit.style.backgroundColor = stageColour[stageCount];
 nextNumber.style.color = stageColour[stageCount];
 stageDisplay.style.color = stageColour[stageCount];
 carBody.style.fill = stageColour[stageCount];
-sun.style.fill = stageColour[stageCount];
+// sun.style.fill = stageColour[stageCount];
 
 // to focus the input box after submitting a guess
 guessBox.focus();
@@ -119,7 +123,9 @@ function endGame() {
     submit.style.display = "none";
     lowHi.textContent = "Game Over";
     lowHi.style.backgroundColor = "red";
-    carBody.style.fill = "red";
+    carFull.style.display = 'none';
+    carFullBroken.style.display = 'block';
+    // carBody2.style.fill = 'red'; // already set to red in the svg file #car-broken-fill
     newGameBtn();
   }
 }
@@ -174,6 +180,11 @@ function newGameBtn() {
     stageCount = 0;
     nextNumber.textContent = stageDifficulty[stageCount];
     stageDisplay.textContent = 0;
+    
+    carFullBroken.style.display = 'none';
+    carFull.style.display = 'block';
+    
+    
     utilityReset();
     
     randomNumber = Math.floor(Math.random() * stageDifficulty[stageCount] + 1);
@@ -195,7 +206,7 @@ function utilityReset() {
   carBody.style.fill = stageColour[stageCount];
 
   carFull.style.animation = "drive 4s ease-in";
-  sun.style.fill = stageColour[stageCount];
+  
   submit.style.display = "block";
   lowHi.textContent = "";
   lowHi.style.backgroundColor = "transparent";
