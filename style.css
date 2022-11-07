@@ -12,7 +12,7 @@
   }
   
   .container {
-    width: 330px;
+    width: 400px;
     height: auto;
     margin: 20px auto;
     display: flex;
@@ -25,9 +25,9 @@
   }
   
   .header {
-    font-size: 2.6rem;
-    font-weight: 700;
-    letter-spacing: 0.7rem;
+    font-size: 1.5rem;
+    font-weight: 900;
+    letter-spacing: 0.15rem;
   }
   
   p {
@@ -55,8 +55,8 @@
     height: 40px;
     border-radius: 20px;
     position: absolute;
-    top: 255px;
-    right: 30px;
+    top: 50px;
+    right: 90px;
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -117,3 +117,120 @@
     font-size: 17px;
   }
   
+  /* Animation Section */
+
+  #svg-clip {
+    position: relative;
+    right: 120px;
+    
+  }
+/* animation: drive 4s ease-in 1s infinite; */
+  #car-full {
+    
+    transform-origin: center;
+    
+  }
+
+  @keyframes drive {
+    from {
+      transform: translateX(-10%);
+    }
+    to {
+      transform: translateX(100%);
+    }
+  }
+
+  #tire-left, #tire-right {
+    animation: wheel 2s linear infinite;
+    transform-origin: center;
+    transform-box: fill-box;
+
+  }
+
+  @keyframes wheel {
+    from {
+      transform: rotateZ(0deg);
+    }
+    to {
+      transform: rotateZ(360deg);
+    }
+  }
+
+  #mirror {
+    fill:rgb(94, 57, 50)
+  }
+
+  /* #car-body{
+  
+  } */
+/* Back car seat */
+  #Vector_136{
+    fill:rgb(94, 57, 50)
+  }
+
+  #stage-display {
+    /* fill: tomato; */
+    animation: sunshine 10s ease-in infinite alternate;
+    transform-origin: center;
+    transform-box: fill-box;
+  }
+  #sun {
+    display: none;
+  }
+  
+  @keyframes sunshine {
+    from {
+      transform: scale(0.7);
+    }
+    to {
+      transform: scale(1.4);
+    }
+  }
+
+
+#cloud_2 {
+  animation: cloud 200s ease-in infinite both;
+  transform-origin: center;
+  
+}
+#cloud_3 {
+  animation: cloud 270s ease-in infinite both;
+  transform-origin: center;
+  
+}
+
+
+
+#cloud_4, #cloud_6,#cloud_8,#cloud_10,#cloud_12,#cloud_14,#cloud_16,#cloud_18, #cloud_20, #cloud_22,#cloud_24, #cloud_26 {
+  animation: cloud 600s ease infinite both;
+  transform-origin: center;
+  
+}
+
+#cloud_5, #cloud_7,#cloud_9,#cloud_11,#cloud_13,#cloud_15,#cloud_17,#cloud_19,#cloud_21, #cloud_23,#cloud_25 {
+  animation: cloud 400s ease infinite both;
+  transform-origin: center;
+  
+} 
+
+@keyframes cloud {
+  from {
+    transform: translateX(-10%);
+  }
+  to {
+    transform: translateX(30%);
+  }
+}
+
+.svg-clip {
+  position: relative;
+}
+.svg-track{
+  border-bottom: 2px dashed rgb(109, 109, 109);
+  border-radius: 3px;
+  position: absolute;
+  top:166px;
+  left:0;
+  width: 330px;
+}
+

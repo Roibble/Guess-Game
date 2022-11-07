@@ -9,6 +9,16 @@ const nextNumber = document.getElementById("next-number");
 const stageDisplay = document.getElementById("stage-display");
 let secondStageBtn = document.createElement("button");
 
+// +++++++ CAR VARIABLES ++++++++
+
+const carBody = document.getElementById('car-body');
+const sun = document.getElementById('sun');
+const carFull = document.getElementById('car-full');
+
+
+
+
+
 let guessednumber;
 
 let newGame;
@@ -63,6 +73,8 @@ secondStageBtn.style.backgroundColor = stageColour[stageCount];
 submit.style.backgroundColor = stageColour[stageCount];
 nextNumber.style.color = stageColour[stageCount];
 stageDisplay.style.color = stageColour[stageCount];
+carBody.style.fill = stageColour[stageCount];
+sun.style.fill = stageColour[stageCount];
 
 // to focus the input box after submitting a guess
 guessBox.focus();
@@ -77,7 +89,7 @@ function checkGuess() {
   guessednumber = Number(guessBox.value); // +++ to get the value of the input box
   turns++;
   progressBar.style.width = progressStage[turns]; // each turn get a % of width from the progressbar array
-
+  carFull.style.animation = "";
   displayPrevious.textContent += " " + guessednumber + " "; // to display the previous guesses
 
   // ++++ SERIES OF CONDITION TO CHECK IF THE NUMBER INPUTED IS =, >, < THE GENERATED NUMBER ++++++
@@ -105,6 +117,7 @@ function endGame() {
     submit.style.display = "none";
     lowHi.textContent = "Game Over";
     lowHi.style.backgroundColor = "red";
+    carBody.style.fill = "red";
     newGameBtn();
   }
 }
@@ -117,10 +130,13 @@ function aliveCheck() {
     submit.style.display = "none";
     lowHi.textContent = "You are a Champion !!! End of Game";
     lowHi.style.backgroundColor = "black";
+    
 
     newGameBtn();
   } else if (alive == false && stageCount < 9) {
     stageCount++;
+    
+    // carFull.style.animation = "drive 4s ease-in";
     console.log(stageCount);
     guessBox.disabled = true;
     submit.disabled = true;
@@ -131,26 +147,31 @@ function aliveCheck() {
     // secondStageBtn.style.backgroundColor = stageColour[stageCount]
     displayDiv.appendChild(secondStageBtn);
     secondStageBtn.addEventListener("click", function () {
-      utilityReset();
+      // carFull.style.animation = "drive 4s ease-in";
+     
       randomNumber = Math.floor(
-        Math.random() * stageDifficulty[stageCount] + 1
+        Math.random()* stageDifficulty[stageCount] + 1
       );
       stageDisplay.textContent = stageCount;
       nextNumber.textContent = stageDifficulty[stageCount];
+      utilityReset();
       secondStageBtn.remove();
     });
   }
 }
 
 function newGameBtn() {
-  stageCount = 0;
-  nextNumber.textContent = stageDifficulty[stageCount];
+  // stageCount = 0;
+  // nextNumber.textContent = stageDifficulty[stageCount];
 
   newGame = document.createElement("button");
   newGame.style.backgroundColor = stageColour[stageCount];
   newGame.innerHTML = "New Game";
   displayDiv.appendChild(newGame);
   newGame.addEventListener("click", function () {
+    stageCount = 0;
+    nextNumber.textContent = stageDifficulty[stageCount];
+   
     utilityReset();
     // stageCount = 0;
     randomNumber = Math.floor(Math.random() * stageDifficulty[stageCount] + 1);
@@ -168,6 +189,10 @@ function utilityReset() {
   progressBar.style.backgroundColor = stageColour[stageCount];
   secondStageBtn.style.backgroundColor = stageColour[stageCount];
   nextNumber.style.color = stageColour[stageCount];
+  carBody.style.fill = stageColour[stageCount];
+
+  carFull.style.animation = "drive 4s ease-in";
+  sun.style.fill = stageColour[stageCount];
   submit.style.display = "block";
   lowHi.textContent = "";
   lowHi.style.backgroundColor = "transparent";
