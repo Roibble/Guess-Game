@@ -2,16 +2,16 @@
     box-sizing: border-box;
     padding: 0;
     margin: 0;
-}
-:root {
+  }
+  :root {
     --primary: orange;
-}
-body{
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-}
-
-.container {
-    
+  }
+  body {
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+      "Lucida Sans", Arial, sans-serif;
+  }
+  
+  .container {
     width: 330px;
     height: auto;
     margin: 20px auto;
@@ -21,79 +21,99 @@ body{
     box-shadow: 1px 2px 20px rgb(189, 189, 189);
     padding: 30px;
     border-radius: 12px;
-}
-
-.header {
-
+    position: relative;
+  }
+  
+  .header {
     font-size: 2.6rem;
     font-weight: 700;
     letter-spacing: 0.7rem;
-    
-}
-
-p {
+  }
+  
+  p {
     font-size: 16px;
     line-height: 1.3;
-}
-
-#display-div{
+  }
+  
+  #display-div {
+    /* margin-top: 20px; remove when not viewed on codepen */
     display: flex;
     flex-direction: column;
     gap: 8px;
     position: relative;
-}
-
-#previous-display {
+  }
+  
+  #previous-display {
     font-size: 13px;
-    line-height: 1.0;
-}
-
- button {
+    line-height: 1;
+    /* margin: 2px 0; remove when not viewed on codepen */
+  }
+  
+  #stage-display {
+    background-color: #000;
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    position: absolute;
+    top: 255px;
+    right: 30px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    font-size: 1.5rem;
+    padding-top: 5px;
+    font-weight: bold;
+  }
+  button {
+    /* margin-top: 10px; */
+    /* margin-bottom: 5px; remove when not viewed on codepen */
     padding: 12px;
     outline: none;
     border: none;
     border-radius: 6px;
     font-weight: 600;
     font-size: 15px;
-   
-}
-
-#guess-box {
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  }
+  
+  #guess-box {
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+      "Lucida Sans", Arial, sans-serif;
     padding: 8px;
     outline: none;
     border-style: solid;
     border-width: 2px;
     border-radius: 6px;
     font-size: 15px;
-}
-
-#low-hi {
+    /* margin: 20px 0; remove when not viewed on codepen */
+  }
+  
+  #low-hi {
     padding: 4px 8px;
     border-radius: 6px;
     color: white;
     font-size: 14px;
-}
-
-.progress-bg {
-    position:absolute;
+  }
+  
+  .progress-bg {
+    position: absolute;
     top: -10px;
     left: 0;
     width: 100%;
     height: 6px;
     background-color: aliceblue;
     border-radius: 12px;
-}
-
-#progress {
+  }
+  
+  #progress {
     border-radius: 6px;
     width: 0;
     height: 6px;
     /* background: var(--primary); */
     box-shadow: inset 0px -4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 20px;
-}
-
-strong {
+  }
+  
+  strong {
     font-size: 17px;
-}
+  }
+  
