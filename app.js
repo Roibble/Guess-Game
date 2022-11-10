@@ -19,9 +19,13 @@ const carBody2 = document.getElementById('car-body_2');
 
 
 
-carFull.addEventListener('focus', function(){
-  // alert('Welcome on board')
-})
+// carBody.addEventListener('focus', function(){
+//   console.log('Welcome on board')
+//   // carFull.style.transform = 'translateX(20%)';
+// })
+
+
+
 
 
 
@@ -89,6 +93,13 @@ displayPrevious.textContent = "Previous attempts: ";
 
 // +++ to execute checkguess function when submit is clicked
 submit.addEventListener("click", checkGuess);
+
+//listening for enter key
+guessBox.addEventListener('keyup', ({key}) => {
+  if (key === 'Enter') {
+    checkGuess();
+  } 
+})
 
 function checkGuess() {
   console.log(randomNumber); // ++++ cheat to view number generated
