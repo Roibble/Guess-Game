@@ -7,8 +7,7 @@
     --primary: orange;
   }
   body {
-    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-      "Lucida Sans", Arial, sans-serif;
+    font-family: 'Verdana, Geneva, Tahoma, sans-serif';
   }
   
   .container {
@@ -28,6 +27,7 @@
     font-size: 1.5rem;
     font-weight: 900;
     letter-spacing: 0.15rem;
+    margin-bottom: 20px;
   }
   
   p {
@@ -65,7 +65,7 @@
     font-weight: bold;
   }
   button {
-    margin-top: 10px; 
+    margin-top: 5px; 
     margin-bottom: 5px; /*remove when not viewed on codepen */
     padding: 12px;
     outline: none;
