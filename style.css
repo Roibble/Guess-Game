@@ -18,7 +18,6 @@
     display: flex;
     flex-direction: column;
     gap: 20px;
-    justify-content: space-between;
     box-shadow: 1px 2px 20px rgb(189, 189, 189);
     padding: 30px;
     border-radius: 12px;
@@ -37,7 +36,7 @@
   }
   
   #display-div {
-    /* margin-top: 20px; remove when not viewed on codepen */
+    margin-top: 20px; /*remove when not viewed on codepen*/
     display: flex;
     flex-direction: column;
     gap: 8px;
@@ -47,7 +46,7 @@
   #previous-display {
     font-size: 13px;
     line-height: 1;
-    /* margin: 2px 0; remove when not viewed on codepen */
+    margin: 2px 0; /*remove when not viewed on codepen */
   }
   
   #stage-display {
@@ -66,8 +65,8 @@
     font-weight: bold;
   }
   button {
-    /* margin-top: 10px; */
-    /* margin-bottom: 5px; remove when not viewed on codepen */
+    margin-top: 10px; 
+    margin-bottom: 5px; /*remove when not viewed on codepen */
     padding: 12px;
     outline: none;
     border: none;
@@ -85,7 +84,7 @@
     border-width: 2px;
     border-radius: 6px;
     font-size: 15px;
-    /* margin: 20px 0; remove when not viewed on codepen */
+    margin: 20px 0; /*remove when not viewed on codepen */
   }
   
   #low-hi {
